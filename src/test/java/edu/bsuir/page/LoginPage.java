@@ -1,10 +1,9 @@
 package edu.bsuir.page;
-
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.LoginElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import edu.bsuir.elements.Element;
 public class LoginPage {
 
         WebDriver driver = WebDriverSingleton.getInstance();
@@ -14,19 +13,16 @@ public class LoginPage {
         }
 
         public void typeUsername(String username){
-            WebElement element = driver.findElement(LoginElements.USERNAME);
-            element.clear();
-            element.sendKeys(username);
+        LoginElements.USERNAME.type(username) ;
+
         }
 
         public void typePassword(String password){
-            WebElement element = driver.findElement(LoginElements.PASSWORD);
-            element.clear();
-            element.sendKeys(password);
+            LoginElements.PASSWORD.type(password);
+
         }
 
         public void clickLoginButton(){
-            WebElement element = driver.findElement(LoginElements.LOGIN_BUTTON);
-            element.click();
+            LoginElements.LOGIN_BUTTON.click();
         }
 }

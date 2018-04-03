@@ -4,7 +4,8 @@ import org.openqa.selenium.By;
 
 public class LoginElements {
     public static String URL="http://testing.cld.iba.by/web/guest/home";
-    public static By USERNAME=By.id("_58_login");
-    public static By PASSWORD=By.id("_58_password");
-    public static By LOGIN_BUTTON = By.xpath("//div[@class='button-holder ']//button");
+    public static   Element USERNAME = new Element ("Поле логина",
+            By.xpath("//input[@id='_58_login']"));
+    public static Element PASSWORD= new Element ("Поле пороля",By.id("_58_password"));
+    public static Element LOGIN_BUTTON =  new Element ( "Вход",By.xpath("//div[@class='button-holder ']//button"));
 }
